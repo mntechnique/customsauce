@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include customsauce *.css
+recursive-include customsauce *.csv
+recursive-include customsauce *.html
+recursive-include customsauce *.ico
+recursive-include customsauce *.js
+recursive-include customsauce *.json
+recursive-include customsauce *.md
+recursive-include customsauce *.png
+recursive-include customsauce *.py
+recursive-include customsauce *.svg
+recursive-include customsauce *.txt
+recursive-exclude customsauce *.pyc
