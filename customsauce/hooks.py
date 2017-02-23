@@ -72,7 +72,8 @@ app_license = "MIT"
 
 doc_events = {
 	"CS Doctype A": {
-		"on_submit": "customsauce.api.a_on_submit"		
+		"on_submit": "customsauce.api.a_on_submit",
+		"on_cancel": "customsauce.api.a_on_cancel"
 	}
 }
 
