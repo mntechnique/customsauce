@@ -3,8 +3,9 @@ from frappe import _
 
 @frappe.whitelist()
 def a_on_submit(self, method):
-	scenario_1(self, method)
-	#scenario_2(self, method)
+	#scenario_1(self, method)
+	scenario_3_new(self, method)
+	# scenario_2(self, method)
 	# scenario_3(self, method)
 	# scenario_4(self, method)
 	# scenario_5(self, method)
@@ -40,6 +41,18 @@ def scenario_3(self, method):
 
 	target_doc.save()
 	frappe.db.commit()
+
+def scenario_3_new(self, method):
+	for li_a in self.table_a: 
+		
+		# set_value by-passes permissions matrix  
+		# frappe.db.set_value("CS DocType C", i.ac, "field_c", i.field_ax1);
+		# frappe.db.commit()	
+
+		oc = frappe.get_doc("CS DocType C", li_a.ac)
+		oc.field_c = li_a.field_ax1
+		oc.save()
+		frappe.db.commit()
 
 def scenario_4(self, method):
 	line_items = frappe.get_all("CS Table AX", filters={"parent": self.name}, fields=["name", "field_ax1"])
